@@ -1,0 +1,97 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    width: 100%;
+    background-color: aliceblue;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    width: 100%;
+}
+
+.section__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+    width: 100%;
+    text-align: center;
+    background-color: aqua;
+}
+
+.h2--section {
+    width: 100%;
+}
+
+.section__contents {
+    width: 70%;
+    background-color: aquamarine;
+}
+
+.menue__contents {
+    display: flex;
+}
+
+.menue__coffee {
+    width: 50%;
+    background-color: azure;
+    border-right: 1.5px solid rgb(0, 0, 0);
+}
+
+.menue__other {
+    width: 50%;
+    background-color: bisque;
+}
+
+.about__contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about__contents__ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* 50%にしないと、liが間延びしてダサい */
+    width: 50%;
+}
+
+.about__contents__li {
+    width: calc(50% - 10px);
+    text-align: left;
+    /* 
+     * 良い感じにテキストを折り返してくれる
+     * 参考: https://qiita.com/kabechiyo13/items/e77c9e9e5ef36b25f05f 
+    */
+    overflow-wrap: break-word;
+}
