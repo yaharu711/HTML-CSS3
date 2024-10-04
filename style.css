@@ -16,82 +16,290 @@ li {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 16px;
     width: 100%;
 }
 
-header {
+/* ヘッダー部分について */
+.top {
     text-align: center;
+    /* スクロールする時に画面全体に広がるようにしている */
     width: 100%;
+    height: 100vh;
+    background-image: url(./img/mainvisual.jpg);
+    /* 画像の中央を持ってくる */
+    background-position: center;
+    /* ブロック要素を埋めるように画像を配置する。object-fitと同じ */
+    background-size: cover;
     background-color: aliceblue;
 }
+header {
+    width: 90%;
+    /* 中央に寄せて上に */
+    margin: 16px auto;
+}
+nav {
+    width: 100%;
+}
+.nav__ul {
+    display: flex;
+    justify-content: right;
+    column-gap: 32px;
+    width: 100%;
+}
+.nav__ul__a {
+    font-size: 1.8rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 5px 5px 10px rgba(13, 1, 1, 0.8)
+}
+.nav__ul__a:hover {
+    /* テキストを光らせる */
+    text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.5), /* 白く光るようなシャドウを追加 */
+    0 0 5px rgba(255, 255, 255, 0.5), 
+    0 0 0 rgba(255, 255, 255, 0.5), 
+    0 0 0 rgba(255, 255, 255, 0.5);
+}
+.header__h1 {
+    /* 
+     * topブロックに対して真ん中であること
+     * つまり、画像の真ん中に配置されること
+     */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-size: 10rem;
+    text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.5), /* 白く光るようなシャドウを追加 */
+    0 0 5px rgba(255, 255, 255, 0.5), 
+    0 0 0 rgba(255, 255, 255, 0.5), 
+    0 0 0 rgba(255, 255, 255, 0.5);
 
+    /* 以下が通常のテキストに影を入れているコード */
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
+}
+
+/* メインコンテンツについて */
 main {
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
     width: 100%;
 }
-
 .section__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 16px;
     width: 100%;
     text-align: center;
-    background-color: aqua;
+    background-color: rgba(17, 1, 1, 0.047);
 }
-
-.h2--section {
+.h2--text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.5), /* 白く光るようなシャドウを追加 */
+    0 0 5px rgba(255, 255, 255, 0.5),
+    0 0 0 rgba(255, 255, 255, 0.5),
+    0 0 0 rgba(255, 255, 255, 0.5);
+    font-size: 5rem;
     width: 100%;
+    height: 400px;
 }
-
+.h3--border {
+    font-size: 2.5rem;
+    margin: 0 auto;
+    width: 20%;
+    border-bottom: 5px solid rgb(198, 8, 8);
+}
 .section__contents {
-    width: 70%;
-    background-color: aquamarine;
+    width: 80%;
+    height: auto;
 }
-
+/* メニューについて */
+.menue__h2 {
+    /* 背景情報について */
+    background-image: url(./img/menu.jpg);
+    background-color: aliceblue;
+    background-position: center;
+    background-size: cover;
+}
 .menue__contents {
     display: flex;
 }
-
 .menue__coffee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 16px;
     width: 50%;
-    background-color: azure;
     border-right: 1.5px solid rgb(0, 0, 0);
 }
-
+.menue__coffee__ul {
+    width: 100%;
+}
+.menue__coffee__li {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 70%;
+}
+.menue__coffee__p {
+    width: 80%;
+    border-bottom: 1px dotted rgb(0, 0, 0);
+}
 .menue__other {
     width: 50%;
-    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 16px;
+    /* 高さは基本は子要素で決まるのでここで勝手に100vhとしても大丈夫 */
+    height: 100vh;
+    overflow-y: auto; 
+}
+.menue__other__ul {
+    width: 100%;
 }
 
+/* Aboutについて */
+.about__h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/about.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: aliceblue;
+}
 .about__contents {
+    margin-top: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 32px;
 }
-
 .about__contents__ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 32px;
     /* 50%にしないと、liが間延びしてダサい */
-    width: 50%;
+    width: 80%;
 }
-
 .about__contents__li {
-    width: calc(50% - 10px);
-    text-align: left;
+    /* 子要素が横に二つずつ並んで欲しいが、余白があるので以下のようにしている */
+    width: calc(50% - 32px - 16px);
+    text-align: center;
     /* 
      * 良い感じにテキストを折り返してくれる
      * 参考: https://qiita.com/kabechiyo13/items/e77c9e9e5ef36b25f05f 
     */
     overflow-wrap: break-word;
+    font-size: 1.6rem;
+    border: 1px solid rgba(81, 2, 2, 0.731);
+    border-radius: 5px;
+    padding: 8px;
+}
+.about__contents__button {
+    position: relative;
+    border: none;
+    border-radius: 3px;
+    background-color: transparent;
+    font-size: 1.9rem;
+    cursor: pointer;
+    width: 250px;
+    padding: 10px;
+    transition: border 0.5ms;
+    margin-bottom: 16px;
+}
+.about__contents__button::before, .about__contents__button::after {
+    /* beforeとafterではcontentプロパティの指定は必須。borderとか装飾したいだけの時は''空文字を指定してあげる。 */    
+    content: '';
+    position: absolute;
+    /* 
+     * これで線が左下と右上で交差しなくなります
+     * ボーダーの大きさも要素のwidth, heightに含めるようにすることで解決できます
+     */
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    transition: all 0.5s ease; /* 変更箇所: アニメーションを追加 */
+    border: 2px solid rgba(81, 2, 2, 0.731);
+}
+.about__contents__button::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+.about__contents__button::after {
+    width: 20px;
+    height: 20px;
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+/* hover時に枠を広げる（ちゃんとbeforeにもafterにもhoverがある） */
+.about__contents__button:hover::before, .about__contents__button:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+/* ロケーションについて */
+.location__h2 {
+    background-image: url(./img/location.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: aliceblue;
+}
+
+.location__contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 16px;
+    margin-top: 32px;
+}
+.location__contents__detail {
+    width: 100%;
+    text-align: left;
+    margin-left: 12px;
+}
+.p--border {
+    width: 25%;
+    border-bottom: 1px solid rgba(81, 2, 2, 0.731);
+}
+
+/* フッターについて */
+footer {
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+.footer__p {
+    font-size: 1.0rem;
 }
