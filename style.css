@@ -128,6 +128,7 @@ main {
     font-size: 2.5rem;
     margin: 0 auto;
     width: 20%;
+    min-width: 130px;
     border-bottom: 5px solid rgb(198, 8, 8);
 }
 .section__contents {
@@ -302,4 +303,35 @@ footer {
 }
 .footer__p {
     font-size: 1.0rem;
+}
+
+@media (max-width: 768px) {
+    .section__contents {
+        width: 90%;
+    }
+    .h3--border {
+        width: auto;
+    }
+    .menue__contents {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 16px;
+        margin-top: 16px;
+        width: 90%;
+    }
+    .menue__coffee {
+        width: 100%;
+        border: none;
+    }
+    .menue__coffee__li {
+        width: 80%;
+    }
+    .menue__other {
+        width: 100%;
+        height: auto;
+    }
+    .about__contents__ul {
+        width: 100%;
+    }
 }
